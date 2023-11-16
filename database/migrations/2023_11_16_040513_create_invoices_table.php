@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('customer_id');
             $table->integer('amount');
             $table->string('status');
-            $table->datatime('billed_dated');
-            $table->datatime('paid_dated')->nullable();
+            $table->datetime('billed_dated');
+            $table->datetime('paid_dated')->nullable();
             $table->timestamps();
         });
     }
