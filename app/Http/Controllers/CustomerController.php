@@ -18,8 +18,11 @@ class CustomerController extends Controller
     {
         $filter = new CustomerFillter();
         $queryItems = $filter->transform($request);
-        dd($queryItems);
+        $includeInvoices = $request->query('includeInvoices');
         $customer = Customer::where($queryItems);
+        if($includeInvoices) {
+            $customer = $customer->with('invoices');
+        }
         return new CustomerCollection($customer->paginate()->appends($request->query()));
     }
 
