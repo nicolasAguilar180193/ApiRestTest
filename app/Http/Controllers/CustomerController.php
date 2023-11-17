@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 use App\Http\Resources\CustomerCollection;
+use App\Http\Resources\CustomerResource;
 use App\Filters\CustomerFilter;
 use Illuminate\Http\Request;
 use App\Models\Customer;
@@ -47,7 +48,11 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        //
+        $includeInvoices = request()->query('includeInvoices');
+        if($includeInvoices) {
+            return new CustomerResource($customer->loadMissing('invoices'));
+        }
+        return new CustomerResource($customer);
     }
 
     /**
