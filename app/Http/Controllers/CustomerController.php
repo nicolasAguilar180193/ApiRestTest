@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 use App\Http\Resources\CustomerCollection;
-use App\Filters\CustomerFillter;
+use App\Filters\CustomerFilter;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 
@@ -16,7 +16,7 @@ class CustomerController extends Controller
      */
     public function index(Request $request)
     {
-        $filter = new CustomerFillter();
+        $filter = new CustomerFilter();
         $queryItems = $filter->transform($request);
         $includeInvoices = $request->query('includeInvoices');
         $customer = Customer::where($queryItems);
