@@ -17,20 +17,29 @@ Asegúrate de tener instalado lo siguiente en tu entorno de desarrollo:
 ```bash
 git clone https://github.com/nicolasAguilar180193/ApiRestTest.git
 cd ApiRestTest
+```
+2. Instalar dependencias:
 
+```bash
 composer install
 ```
 
-Apartir del archivo .env.example crear un archivo .env y configurar lo necesario, como por ejemplo la coneccion a la base de datos.
+3. Apartir del archivo .env.example crear un archivo .env y configurar lo necesario, como por ejemplo la coneccion a la base de datos.
 
 ```bash
 cp .env.example .env
 ```
 
-Ejecuta las migraciones y los seeders para inicializar la base de datos:
+4. Ejecuta las migraciones y los seeders para inicializar la base de datos:
 
 ```bash
 php artisan migrate --seed
+```
+
+5. Levantar el servidor de artisan:
+
+```bash
+php artisan serve
 ```
 
 ## Uso
