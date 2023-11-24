@@ -59,6 +59,8 @@ php artisan serve
     * api/v1/invoices: Obtener todos las facturas.
     * api/v1/invoices/bulk: Inseta facturas masivamente a travez de un array de objetos json con atributos correspondientes.
 
+* Usuario(User);
+    * POST app/v1/user/register: Registra un nuevo usuario.
 
 ## Contribuciones
 
