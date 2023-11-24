@@ -1,4 +1,4 @@
-# Laravel API para Gestión de Clientes e Facturas
+# Laravel API para Gestión de Clientes y Facturas
 
 Este proyecto Laravel proporciona una API simple para la gestión de clientes y facturas. Implementa las operaciones básicas de CRUD (Crear, Leer, Actualizar, Eliminar) para ambas entidades. 
 
